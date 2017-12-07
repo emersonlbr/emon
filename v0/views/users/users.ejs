@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+  <div class="container">
+      <div class="row">
+        <% users.forEach(function(user){ %>
+        <div class="col-lg-4 center-block">
+          <img id="img" class="rounded-circle " src="<%= user.image %>" alt="">
+          <h2 class="text-center"><a class="header" href="/user/<%= user._id %>"><%= user.name%></a></h2>
+          <p class="text-justify"><%= user.description %></p>
+          <p class="text-center"><%= "from " + user.city + " in " + user.country %></p>
+        </div>
+        <% }) %>
+      </div>
+    
+  </div>
+
+<% include ../partials/footer %>
+

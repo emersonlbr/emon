@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <form action="/user/<%= user._id %>?_method=PUT" method="POST">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="user[name]" id="name" placeholder="Name" value="<%= user.name %>" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="email">Email</label>
+        <input type="user[email]" class="form-control" name="email" id="email" placeholder="Email" value="<%= user.email %>" required>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="user[country]" id="country" placeholder="Country" value="<%= user.country %>" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="city">City</label>
+        <input type="text" class="form-control" name="user[city]" id="city" placeholder="City" value="<%= user.city %>" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" name="user[age]" id="age" placeholder="Age" value="<%= user.age %>" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="user[password]" id="password" placeholder="Password" value="<%= user.password %>" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="image">Image</label>
+        <input type="text" class="form-control" name="user[image]" id="image" placeholder="Image" value="<%= user.image %>" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" name="user[description]" id="description" placeholder="Description" maxlength="299" value="<%= user.description %>" required>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Update!</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

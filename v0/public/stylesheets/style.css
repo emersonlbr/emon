@@ -1,0 +1,19 @@
+footer {
+  text-align: center;
+  color: black;
+}
+
+.rounded-circle {
+  width: 140px!important;
+  height: 140px!important;
+  vertical-align: center!important;
+}
+
+#img {
+  margin: auto;
+  display: block;
+}
+
+/*p {
+  text-align: justify!important;
+}*/
