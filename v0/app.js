@@ -90,7 +90,7 @@ app.get("/users", function(req, res) {
 
 
 // SHOW EACH PROFILE
-app.get("/user/:id", function(req, res) {
+app.get("/users/:id", function(req, res) {
   User.findById(req.params.id, function(err, foundUser){
     if (err) {
       console.log(err);
@@ -102,7 +102,7 @@ app.get("/user/:id", function(req, res) {
 
 
 // EDIT USER
-app.get("/user/:id/edit", function(req, res) {
+app.get("/users/:id/edit", function(req, res) {
   User.findById(req.params.id, function(err, foundUser) {
     if (err) {
       res.redirect("/users");
@@ -114,17 +114,32 @@ app.get("/user/:id/edit", function(req, res) {
 });
 
 
+
 // UPDATE USER 
-app.put("/user/:id", function(req, res) {
+app.put("/users/:id", function(req, res) {
   // you need there 3 arguments!
   User.findByIdAndUpdate(req.params.id, req.body.user, function(err, updateUser) {
     if (err) {
       res.render("users");
     } else {
-      res.redirect("/user/" + req.params.id);
+      res.redirect("/users/" + req.params.id);
     }
   });
 });
+
+
+
+// DELETE USER
+app.delete("/users/:id", function(req, res) {
+  User.findByIdAndRemove(req.params.id, function(err) {
+    if (err) {
+      res.redirect("/users");
+    } else {
+      res.redirect("/users");
+    }
+  });
+});
+
 
 
 

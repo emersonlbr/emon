@@ -12,8 +12,12 @@
     <p>Member Since: <span> <%- user.created.toDateString() %> </span></p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
     
-    <a class="btn btn-warning" href="/user/<%= user._id %>/edit">Edit</a>
-    
+    <div id="btn" class="container">
+      <a class="btn btn-warning" href="/users/<%= user._id %>/edit">Edit</a>
+      <form class="" action="/users/<%= user._id %>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
+      </form>
+    </div>
     
   </div>
   
